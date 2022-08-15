@@ -14,37 +14,25 @@
         <a-assets>
             <a-asset-item id="table-obj" src="assets/table/cafe_set_mota_table.obj"></a-asset-item>
             <a-asset-item id="table-mtl" src="assets/table/cafe_set_mota_table.mtl"></a-asset-item>
-        </a-assets>
-        <a-assets>
+
             <a-asset-item id="cake-obj" src="untitled.obj"></a-asset-item>
             <a-asset-item id="cake-mtl" src="untitled.mtl"></a-asset-item>
-        </a-assets>
-        <a-assets>
+
             <a-asset-item id="plate-obj" src="assets/plate/bread-plate.obj"></a-asset-item>
             <a-asset-item id="plate-mtl" src="assets/plate/bread-plate.mtl"></a-asset-item>
-        </a-assets>
-        <!-- <a-assets>
-            <img id="sky" src="assets/sky/sky.jpg">
-        </a-assets> -->
-        <a-assets>
+
+            <a-asset-item id="fnt1" src="assets/fonts/OpenSans-Regular.ttf"></a-asset-item>
+
             <img id="wall" src="assets/wall/wall.jpg">
-        </a-assets>
-        <a-assets>
             <img id="wall2" src="assets/wall/wall2.jpg">
-        </a-assets>
-        <a-assets>
-            <img id="wall3" src="assets/wall/wall3.jpg">
-        </a-assets>
-        <a-assets>
+            <img id="wall3" src="assets/wall/wall3.jpg">      
             <img id="wall4" src="assets/wall/wall4.jpg">
-        </a-assets>
-        <a-assets>
             <img id="wall5" src="assets/wall/wall5.jpg">
         </a-assets>
 
 
     <a-entity rotation="0 0 0">
-        <a-entity scale="0.2 0.2 0.2" position="0 1.3 -1" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear;">
+    <a-entity scale="0.2 0.2 0.2" position="-0.7 1.3 -1" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear;">
             <a-obj-model src="#cake-obj" mtl="#cake-mtl"></a-obj-model>
     </a-entity>
 
@@ -55,7 +43,7 @@
         <a-camera></a-camera>
     </a-entity>
 
-    <a-entity position="0 1.28 -1" scale="1.3 1.3 1.3">
+    <a-entity position="-0.7 1.28 -1" scale="1.3 1.3 1.3">
         <a-obj-model src="#plate-obj" mtl="#plate-mtl"></a-obj-model>
     </a-entity>
     </a-entity>
@@ -67,35 +55,60 @@
 
     <a-entity camera look-controls position="0 1.61 0"></a-entity>
 
-<a-entity>
-    <a-gui-flex-container flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" scale="1 1 1" panel-color="#072B73" panel-rounded="0.2" position="0 4 -1.9" rotation="0 0 0">
-        <a-gui-button
-        
-        id="btn1"
-        width="2.5"
-        height="0.7"
-        base-depth="0.05"
-        depth="0.2" 
-        gap="0.1"
-        radius="0"
-        onclick="testButtonAction1"
-        value="test button"
-        font-size="0.35"
-        margin="0 0 0.05 0" 
-        toggle="true">
-        sample
-        </a-gui-button>
-
-
+    <a-entity>
+    <a-gui-flex-container 
+        flex-direction="column" 
+        justify-content="center" 
+        align-items="normal" 
+        component-padding="0.1" 
+        opacity="0.7" 
+        scale="1 1 2" 
+        panel-color="#5e1e05" 
+        panel-rounded="0.1" 
+        position="0.7 2 -0.817" 
+        rotation="0 -20.000 0">
     </a-gui-flex-container>
-</a-entity>
-
-    
-    
     
 
-    
- </a-scene>
+        <a-gui-icon-label-button
+            id="mydropdown"						
+            onclick="openDropdown"
+            icon="f0c9"
+            icon-font="assets/fonts/OpenSans-Regular.ttf"
+            value="dropdown"
+            font-family="assets/fonts/OpenSans-Regular.ttf"
+            font-size="0.25"
+            visible="true"
+            position="0.7 2.3 -0.817"
+            rotation="0 -20.000 0"
+            scale="0.5 0.2 1"
+            animation__rotateIn="property: rotation; to: 180 0 0; dur: 1000; startEvents:opendropdown"
+            animation__visibleIn="property: visible; to: false; delay: 500; startEvents:opendropdown"
+            animation__rotateOut="property: rotation; to: 0 0 0; dur: 1000; startEvents:closedropdown"
+            animation__visibleOut="property: visible; to: true; delay: 500; startEvents:closedropdown"
+>	
+        </a-gui-icon-label-button>
+        <a-gui-icon-label-button
+			id="mydropdown"						
+			onclick="openDropdown"
+	        icon="f0c9"
+			icon-font="assets/fonts/OpenSans-Regular.ttf"
+			value="dropdown"
+			font-family="assets/fonts/OpenSans-Regular.ttf"
+			font-size="0.25"
+			visible="ture"
+            position="0.7 1.8 -0.817"
+            rotation="0 -20.000 0"
+            scale="0.5 0.2 1"
+			animation__rotateIn="property: rotation; to: 180 0 0; dur: 1000; startEvents:opendropdown"
+			animation__visibleIn="property: visible; to: false; delay: 500; startEvents:opendropdown"
+			animation__rotateOut="property: rotation; to: 0 0 0; dur: 1000; startEvents:closedropdown"
+			animation__visibleOut="property: visible; to: true; delay: 500; startEvents:closedropdown">	
+		</a-gui-icon-label-button>
+
+        <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: [gui-interactable]"></a-entity>
+    </a-entity>
+</a-scene>
 
     
 </body>

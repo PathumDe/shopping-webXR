@@ -30,6 +30,20 @@
             <img id="wall5" src="assets/wall/wall5.jpg">
         </a-assets>
 
+        	<!-- Camera + cursor. -->
+		<a-entity id="cameraRig" position="0 3 0.7" rotation="-25 0 0">
+			<a-camera look-controls wasd-controls position="0 0 0">
+				<a-gui-cursor id="cursor"
+						  raycaster="objects: [gui-interactable]"
+						  fuse="true" fuse-timeout="2000"
+						  color="#ECEFF1"
+						  hover-color="#CFD8DC"
+						  active-color="#607D8B"
+						  design="ring" > <!-- dot, ring, reticle, cross  -->
+				</a-gui-cursor> <!-- /cursor -->
+			</a-camera> <!-- /camera -->
+		</a-entity>	
+
 
     <a-entity rotation="0 0 0">
     <a-entity scale="0.2 0.2 0.2" position="-0.7 1.3 -1" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear;">
@@ -39,19 +53,19 @@
     <a-entity light="color: #ffffff; intensity: 1" position="-1.948 6.773 5.704"></a-entity>
     <a-entity light="color: #ffffff; intensity: 1" position="0.714 3.404 0.000"></a-entity>
 
-    <a-entity position="0 0.7 0.7" rotation="-19 0 0">
+    <!-- <a-entity position="0 0.7 0.7" rotation="-19 0 0">
         <a-camera></a-camera>
-    </a-entity>
+    </a-entity> -->
 
     <a-entity position="-0.7 1.28 -1" scale="1.3 1.3 1.3">
         <a-obj-model src="#plate-obj" mtl="#plate-mtl"></a-obj-model>
     </a-entity>
     </a-entity>
 
-    <a-plane material="src: #wall5; repeat: 1 1;" position="0 3.5 -2" rotation="0 0 0" scale="5 5 5"></a-plane>
-    <a-plane material="src: #wall4; repeat: 3 3;" position="0 1 -2" rotation="-90 0 0" scale="5 5 5" color="#41311b"></a-plane>
-    <a-plane material="src: #wall5; repeat: 1 1;" position="-2.5 3.5 -2" rotation="0 90 0" scale="5 5 5"></a-plane>
-    <a-plane material="src: #wall5; repeat: 1 1;" position="2.5 3.5 -2" rotation="0 -90 0" scale="5 5 5"></a-plane>
+    <a-plane material="src: #wall3; repeat: 1 1;" position="0 3.5 -2" rotation="0 0 0" scale="5 5 5"></a-plane>
+    <a-plane material="src: #wall3; repeat: 3 3;" position="0 1 -2" rotation="-90 0 0" scale="5 5 5" color="#41311b"></a-plane>
+    <a-plane material="src: #wall; repeat: 1 1;" position="-2.5 3.5 -2" rotation="0 90 0" scale="5 5 5"></a-plane>
+    <a-plane material="src: #wall; repeat: 1 1;" position="2.5 3.5 -2" rotation="0 -90 0" scale="5 5 5"></a-plane>
 
     <a-entity camera look-controls position="0 1.61 0"></a-entity>
 
